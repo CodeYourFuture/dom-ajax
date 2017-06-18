@@ -7,11 +7,11 @@ var volunteerButton = document.querySelector('.buttons .btn-secondary');
 var blueButton = document.querySelector('#blueBtn');
 blueButton.addEventListener('click',colorBlue);
 //orange button
-var blueButton = document.querySelector('#orangeBtn');
-blueButton.addEventListener('click',colorOrange);
+var orangeButton = document.querySelector('#orangeBtn');
+orangeButton.addEventListener('click',colorOrange);
 // green button
-var blueButton = document.querySelector('#greenBtn');
-blueButton.addEventListener('click',colorGreen);
+var greenButton = document.querySelector('#greenBtn');
+greenButton.addEventListener('click',colorGreen);
 
 //blue button function
 function colorBlue(){
