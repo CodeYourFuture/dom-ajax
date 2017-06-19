@@ -38,55 +38,12 @@ function changeToGreen() {
     volunteerButton.innerText.backgroundColor = 'white';
 }
 
-// Selecting the submit button and validating the form.
+/* Selecting the submit button and validating the form.
+doesn't seem to be working.*/
 var submitButtom = document.querySelector("button.btn.btn-primary");
 submitButtom.addEventListener('click',validateTheForm);
 function validateTheForm() {
 alert("selected the right button.");
 }
 
-
-// // Didn't seem to be working.
-// var donateButton = document.querySelector(".btn-primary");
-// donateButton.addEventListener("click", changeColor1);
-
-// function changeColor1() {
-//     donateButton.style.backgroundColor = '#ffa500';
-// }
-
-
-
-// var volunteerButton = document.querySelector(".btn-secondary");
-// volunteerButton.addEventListener("click", changeColor2);
-
-// function changeColor2() {
-//     volunteerButton.style.backgroundColor = 'black';
-// }
-
-
-
-
-// // This didn't work out, need help
-// var volunteerFont = document.querySelector("Volunteer");
-// volunteerFont.addEventListener("click", changeFontColor);
-
-// function changeFontColor() {
-//     volunteerFont.style.backgroundColor = 'white';
-// }
-
-
-// // Not working
-// var orangeButton = document.querySelector("#orangeBtn");
-// orangeButton.addEventListener("click", changeBackgroundColor);
-
-// function changeBackgroundColor() {
-//     jumbotron.style.backgroundColor = "#f0ad4e";
-// }
-
-// var jumbBackground = document.querySelector('#jumbotronId');
-// var domanteButon = document.querySelector('#domantButtonId');
-// domanteButon.addEventListener('click', addBackground);
-// function addBackground() {
-//     jumbBackground.style.backgroundColor = 'black';
-// }
 
