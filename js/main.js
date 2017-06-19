@@ -57,10 +57,10 @@ var myButton = document.querySelector("#donateBike");
 myButton.addEventListener("click", doSomething);
 
 function doSomething() {
-    var box = document.querySelector(".jumbotron");
-    if (!box.className.includes("red")) {
-        box.className += " yellow";
-    }
+  var box = document.querySelector(".jumbotron");
+  if (!box.className.includes("red")) {
+    box.className += " yellow";
+  }
 }
 
 
