@@ -50,13 +50,19 @@ function showAllImages() {
     selectingAllimg[i].height = selectingAllimg[i].height - 10;
   }
 }
-// It's not working.
-var boxColor = document.querySelector(".jumbotron");
-boxColor.addEventListener('click', changeColor);
 
-function changeColor() {
-  boxColor.className += " blue";
+// Temporary code, testing now. Will need more explanation for this.
+var myButton = document.querySelector("#donateBike");
+
+myButton.addEventListener("click", doSomething);
+
+function doSomething() {
+    var box = document.querySelector(".jumbotron");
+    if (!box.className.includes("red")) {
+        box.className += " yellow";
+    }
 }
+
 
 
 // This works. Posting, Sending (params) to Server
