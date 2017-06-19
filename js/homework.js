@@ -98,7 +98,7 @@ function validateTheForm(event) {
         emailInput.value = "";
     }
 
-
+}
 
 
 
