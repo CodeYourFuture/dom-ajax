@@ -11,7 +11,6 @@ function changeToBlue() {
     box.style.backgroundColor = '#588fbd';
     donateButton.style.backgroundColor = '#ffa500';
     volunteerButton.style.backgroundColor = 'black';
-    volunteerButton.innerHTML.backgroundColor = 'white';
 }
 
 
@@ -23,7 +22,6 @@ function changetoOrange() {
     box.style.backgroundColor = '#f0ad4e';
     donateButton.style.backgroundColor = '#5751fd';
     volunteerButton.style.backgroundColor = '#31b0d5';
-    volunteerButton.innerHTML.backgroundColor = 'white';
 }
 
 
@@ -35,15 +33,20 @@ function changeToGreen() {
     box.style.backgroundColor = '#87ca8a';
     donateButton.style.backgroundColor = 'black';
     volunteerButton.style.backgroundColor = '#8c9c08';
-    volunteerButton.innerText.backgroundColor = 'white';
 }
 
 /* Selecting the submit button and validating the form.
 doesn't seem to be working.*/
-var submitButtom = document.querySelector("button.btn.btn-primary");
-submitButtom.addEventListener('click',validateTheForm);
+var submitButtom = document.querySelector('#submitButton');
+submitButtom.addEventListener('click', validateTheForm);
+
 function validateTheForm() {
-alert("selected the right button.");
+
+    var nameboxTag = document.querySelector(#example - text - input);
+    var namebox = document.querySelector('#example-text-input').value;
+    if (namebox.length === 0) {
+        nameboxTag.style.backgroundColor = '#8c9c08';
+    }
 }
 
 
