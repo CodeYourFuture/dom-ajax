@@ -50,29 +50,35 @@ function validatFormFild() {
     var userName = document.querySelector('#example-text-input');
     var emailAddress = document.querySelector('#exampleInputEmail1');
     var textArea = document.querySelector('#exampleTextarea');
-    if (!userName.value) {
+    var isEmail = false;
+    for (i = 0; i < emailAddress.value.length; i++) {
+        if (emailAddress.value[i] === '@') {
+            isEmail = true;
+
+        }
+    }
+
+    if (!isEmail) {
+        alert('please Enter a valid Email Address');
+        emailAddress.style.backgroundColor = 'red';
+
+    }
+    else if (!userName.value) {
         alert('please Enter your user name?');
         userName.style.backgroundColor = 'red';
-    } else if (!emailAddress.value) {
-        alert('please Enter a valid Email Address?');
-        emailAddress.style.backgroundColor = 'red';
     }
     else if (!textArea.value) {
         alert('please discribe about yourself?');
         textArea.style.backgroundColor = 'red';
-    } else if (textArea.value && emailAddress && textArea) {
-        // 1. clear input
-        alert('thank you for filling out the form');
-        userName.value = ' ';
-        emailAddress = ' ';
-        textArea = ' ';
     } else {
-        userName.value = ' ';
-        emailAddress = ' ';
-        textArea = ' ';
-        userName.style.backgroundColor = ' ';
-        emailAddress.style.backgroundColor = ' ';
-        textArea.style.backgroundColor = ' ';
+        //clear all the input
+        alert('thank you for filling out the form');
+        userName.value = '';
+        emailAddress.value = '';
+        textArea.value = '';
+        userName.style.backgroundColor = '';
+        emailAddress.style.backgroundColor = '';
+        textArea.style.backgroundColor = '';
     }
 
 }
