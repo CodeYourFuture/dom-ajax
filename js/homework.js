@@ -48,7 +48,7 @@ function changeToGreen() {
 var submitButton = document.querySelector('#submitButton');
 submitButton.addEventListener('click', validateTheForm);
 
-// This is ValidatTheForm function. used event.preventDefault() method. 
+// This is ValidateTheForm function. used event.preventDefault() method. 
 function validateTheForm(event) {
     event.preventDefault();
 
