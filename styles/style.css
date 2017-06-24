@@ -123,6 +123,10 @@ body {
 	background-color: red;
 }
 
+.blue {
+	background-color: blue;
+}
+
 .addArticle {
 	margin-bottom: 10px;
 }
@@ -157,3 +161,5 @@ body {
 	   max-height: 80px;
 	}
 }
+
+
