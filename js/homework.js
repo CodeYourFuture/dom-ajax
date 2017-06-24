@@ -42,6 +42,12 @@ function validatFormFild() {
     var emailAddress = document.querySelector('#exampleInputEmail1');
     var textArea = document.querySelector('#exampleTextarea');
     var isEmail = false;
+    if ((emailAddress.value==="") && (userName.value==="") && (textArea.value==="")) {
+        alert('please Enter all the boxes');
+        emailAddress.style.backgroundColor = 'red';
+        userName.style.backgroundColor = 'red';
+        textArea.style.backgroundColor = 'red';
+    }
     for (i = 0; i < emailAddress.value.length; i++) {
         if (emailAddress.value[i] === '@') {
             isEmail = true;
