@@ -42,11 +42,12 @@ function validatFormFild() {
     var emailAddress = document.querySelector('#exampleInputEmail1');
     var textArea = document.querySelector('#exampleTextarea');
     var isEmail = false;
-    if (emailAddress && emailAddress.value.indexOf('@') !== -1) {
-        isEmail = true;
-
+    for (i = 0; i < emailAddress.value.length; i++) {
+        if (emailAddress.value[i] === '@') {
+            isEmail = true;
+        }
     }
-    else if (!isEmail) {
+    if (!isEmail) {
         alert('please Enter a valid Email Address');
         emailAddress.style.backgroundColor = 'red';
 
