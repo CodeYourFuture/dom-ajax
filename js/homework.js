@@ -31,38 +31,47 @@ greenBtn.addEventListener('click', function () {
     greenVolun.style.backgroundColor = '8c9c08';
 });
 /*======================== Form Validation ========================*/
-const emailValid = document.querySelector('#exampleInputEmail1');
-const nameValid = document.querySelector('#example-text-input');
-const emailTest = document.querySelector('#example-text-input');
-const textAreaValid = document.querySelector('#exampleTextarea');
+const name = document.querySelector('#example-text-input');
+const email = document.querySelector('#exampleInputEmail1');
+const textArea = document.querySelector('#textArea');
 const subButton = document.querySelector('#subButton');
 subButton.addEventListener('click', function(pram) {
     pram.preventDefault()
-        if(nameValid.value !== '' && textAreaValid.value !== '' && emailValid.value.includes('@')){
+    function nameValid(name) {
+        return name.value !== '';
+    }
+    function emailValid(email) {
+        return email.value.indexOf("@") !== 0 && email.value.indexOf("@") !== -1 && email.value.indexOf(".") !== -1 && email.value.lastIndexOf("@") < email.value.lastIndexOf(".") && email.value.lastIndexOf(".") < (email.value.length - 2) 
+    }
+    function textAreaValid(textArea) {
+        return textArea.value !== '';
+    }
+    function elementColor(elementName) {
+        return elementName.style.backgroundColor = 'red';
+    }
+    
+    if(nameValid(name) && emailValid(email) && textAreaValid(textArea)){
             alert('Thank you for filling out the form');
-    }else if (nameValid.value === '' || textAreaValid.value === '' || !emailValid.value.includes('@')){
-        if (nameValid.value === '' && textAreaValid.value === '' && !emailValid.value.includes('@')) {
-            emailValid.style.backgroundColor = 'red';
-            nameValid.style.backgroundColor = 'red';
-            textAreaValid.style.backgroundColor = 'red';
-        }else if (nameValid.value !== '' && textAreaValid.value === '' && !emailValid.value.includes('@')) {
-            emailValid.style.backgroundColor = 'red';
-            textAreaValid.style.backgroundColor = 'red';
-        }else if (nameValid.value === '' && textAreaValid.value !== '' && !emailValid.value.includes('@')) {
-            emailValid.style.backgroundColor = 'red';
-            nameValid.style.backgroundColor = 'red';
-        }else if (nameValid.value === '' && textAreaValid.value === '' && emailValid.value.includes('@')) {
-            textAreaValid.style.backgroundColor = 'red';
-            nameValid.style.backgroundColor = 'red';
-        }else if (nameValid.value !== '' && textAreaValid.value !== '' && !emailValid.value.includes('@')) {
-            emailValid.style.backgroundColor = 'red';
-        }else if (nameValid.value !== '' && textAreaValid.value === '' && emailValid.value.includes('@')) {
-            textAreaValid.style.backgroundColor = 'red';
-        }else if (nameValid.value === '' && textAreaValid.value !== '' && emailValid.value.includes('@')) {
-            nameValid.style.backgroundColor = 'red';
-        }
-       }
-        
+    }else if (!nameValid(name) && !emailValid(email) && !textAreaValid(textArea)){
+            elementColor(name);
+            elementColor(email);
+            elementColor(textArea);
+    }else if (nameValid(name) && !emailValid(email) && !textAreaValid(textArea)) {
+            elementColor(email);
+            elementColor(textArea);
+    }else if (!nameValid(name) && !emailValid(email) && textAreaValid(textArea)) {
+            elementColor(email);
+            elementColor(name);
+    }else if (!nameValid(name) && emailValid(email) && !textAreaValid(textArea)) {
+            elementColor(name);
+            elementColor(textArea);
+    }else if (nameValid(name) && !emailValid(email) && textAreaValid(textArea)) {
+            elementColor(email);
+    }else if (nameValid(name) && emailValid(email) && !textAreaValid(textArea)) {
+            elementColor(textArea);
+    }else if (!nameValid(name) && emailValid(email) && textAreaValid(textArea)) {
+            elementColor(name);
+    }      
 });
 
 
