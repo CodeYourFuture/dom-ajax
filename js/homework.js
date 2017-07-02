@@ -37,18 +37,10 @@ const textArea = document.querySelector('#textArea');
 const subButton = document.querySelector('#subButton');
 subButton.addEventListener('click', function(pram) {
     pram.preventDefault()
-    function nameValid(name) {
-        return name.value !== '';
-    }
-    function emailValid(email) {
-        return email.value.indexOf("@") !== 0 && email.value.indexOf("@") !== -1 && email.value.indexOf(".") !== -1 && email.value.lastIndexOf("@") < email.value.lastIndexOf(".") && email.value.lastIndexOf(".") < (email.value.length - 2) 
-    }
-    function textAreaValid(textArea) {
-        return textArea.value !== '';
-    }
-    function elemBackColor(elementName) {
-        return elementName.style.backgroundColor = 'red';
-    }
+    const nameValid = (name => name.value !== '');
+    const emailValid = (email => email.value.indexOf("@") !== 0 && email.value.indexOf("@") !== -1 && email.value.indexOf(".") !== -1 && email.value.lastIndexOf("@") < email.value.lastIndexOf(".") && email.value.lastIndexOf(".") < (email.value.length - 2));
+    const textAreaValid = (textArea => textArea.value !== '');
+    const elemBackColor = (elementName => elementName.style.backgroundColor = 'red');
     
     if(nameValid(name) && emailValid(email) && textAreaValid(textArea)){
             alert('Thank you for filling out the form');
