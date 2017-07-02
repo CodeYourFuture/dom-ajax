@@ -46,31 +46,31 @@ subButton.addEventListener('click', function(pram) {
     function textAreaValid(textArea) {
         return textArea.value !== '';
     }
-    function elementColor(elementName) {
+    function elemBackColor(elementName) {
         return elementName.style.backgroundColor = 'red';
     }
     
     if(nameValid(name) && emailValid(email) && textAreaValid(textArea)){
             alert('Thank you for filling out the form');
     }else if (!nameValid(name) && !emailValid(email) && !textAreaValid(textArea)){
-            elementColor(name);
-            elementColor(email);
-            elementColor(textArea);
+            elemBackColor(name);
+            elemBackColor(email);
+            elemBackColor(textArea);
     }else if (nameValid(name) && !emailValid(email) && !textAreaValid(textArea)) {
-            elementColor(email);
-            elementColor(textArea);
+            elemBackColor(email);
+            elemBackColor(textArea);
     }else if (!nameValid(name) && !emailValid(email) && textAreaValid(textArea)) {
-            elementColor(email);
-            elementColor(name);
+            elemBackColor(email);
+            elemBackColor(name);
     }else if (!nameValid(name) && emailValid(email) && !textAreaValid(textArea)) {
-            elementColor(name);
-            elementColor(textArea);
+            elemBackColor(name);
+            elemBackColor(textArea);
     }else if (nameValid(name) && !emailValid(email) && textAreaValid(textArea)) {
-            elementColor(email);
+            elemBackColor(email);
     }else if (nameValid(name) && emailValid(email) && !textAreaValid(textArea)) {
-            elementColor(textArea);
+            elemBackColor(textArea);
     }else if (!nameValid(name) && emailValid(email) && textAreaValid(textArea)) {
-            elementColor(name);
+            elemBackColor(name);
     }      
 });
 
