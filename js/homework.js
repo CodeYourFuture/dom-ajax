@@ -111,8 +111,29 @@ function checkYou(evt) {
 }
 */
 var submitBtn = document.getElementById('submitBtn');
-submitBtn.addEventListener("click", checkForm);
+submitBtn.addEventListener("click", validateNoEmpty);
 
+function validateNoEmpty(field, alertTxt) {
+    if (field.value == "") {
+        alert(alertTxt);
+        field.style.backgroundColor = "red";
+        field.focus();
+        return false;
+    }
+    return true;
+}
+if (validateNoEmpty(inputName, "Error: Name is Empty") &&
+    validateNoEmpty(inputTextArea, "Error: Describe yourself field is empty!")) {
+    alert("Thanks for submitting your information"); {
+        document.getElementById("contact-form").reset()
+        inputTextArea.style.backgroundColor = '';
+        inputTextArea.focus();
+        return true;
+    }
+
+}
+
+/*
 function checkForm() {
     event.preventDefault();
     var inputName = document.getElementById("example-text-input");
@@ -155,3 +176,4 @@ function checkForm() {
 
 
 }
+*/

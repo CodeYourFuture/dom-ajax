@@ -2,9 +2,9 @@
 
 var myButton = document.querySelector("#donateBike");
 
-myButton.addEventListener("click", doSomething);
+myButton.addEventListener("click", selectBox);
 
-function doSomething() {
+function selectBox() {
     var box = document.querySelector(".jumbotron");
     if (!box.className.includes("red")) {
         box.className += " red";
@@ -13,9 +13,9 @@ function doSomething() {
 
 var myButton2 = document.querySelector("#addToLearnMore"); // Element that is going to call the action
 
-myButton2.addEventListener("click", doSomething2);
+myButton2.addEventListener("click", createNewParagraph);
 
-function doSomething2() {
+function createNewParagraph() {
     var box = document.querySelector("#mainArticles"); // Call the element that want to change
     var paragraph = document.createElement("article.article");
     paragraph.style.color = "blue";
@@ -27,8 +27,8 @@ function doSomething2() {
 var images = document.querySelector("#allImages"); // Element that is going to call the action
 images.addEventListener("click", selectAll);
 
-function selectAll() {
-    var allImages = document.querySelectorAll("img");
+function selectAllImages() {
+    var allImages = document.querySelectorAllImages("img");
     for (var i = 0; i < allImages.length; i++) {
         allImages[i].width = allImages[i].width - 10;
         allImages[i].height = allImages[i].height - 10;
