@@ -48,10 +48,10 @@ sbumitButton.addEventListener('click', submitForm);
 //submit function
 function submitForm(event) {
     event.preventDefault();
-    checkEmail();
-    checkName();
-    checkDescrib();
-    if (checkEmail() && checkName() && checkDescrib()) {
+    var checkValidateEmail=checkEmail();
+    var checkValidateName=checkName();
+    var checkValidatDescribe=checkDescrib();
+    if (checkValidateEmail && checkValidateName && checkValidatDescribe) {
         textEmail.value = "";
         textName.value = "";
         textDescib.value = "";
