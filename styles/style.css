@@ -119,8 +119,42 @@ body {
 	margin-bottom: 0;
 }
 
-.red {
-	background-color: red;
+.blue {
+	background-color: #588fbd;
+}
+
+.bikeButtonOrange {
+    background-color: #ffa500;
+}
+
+.volunteerButtonBlack{
+	background-color: black;
+	color: white;
+}
+
+.orange {
+	background-color: #f0ad4e;
+}
+
+.bikeButtonBlue {
+    background-color: #5751fd;
+}
+
+.volunteerButtonBlue{
+	background-color: #31b0d5;
+	color: white;
+}
+
+.green {
+	background-color: #87ca8a;
+}
+
+.bikeButtonBlack {
+    background-color: black;
+}
+
+.volunteerButtonGreen{
+	background-color: #8c9c08;
 }
 
 .addArticle {
@@ -152,7 +186,6 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-
 	.navbar-brand > img {
 	   max-height: 80px;
 	}
