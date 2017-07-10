@@ -53,9 +53,9 @@ sbumitButton.addEventListener('click', submitForm);
 //check text in email field 
 
 function userEmail() {
-    if (textEmail.value.indexOf('@') < 0 || textEmail.value.length <= 5 ) {
+    if (textEmail.value.indexOf('@') === 0) {
         textEmail.style.backgroundColor = "red";
-        alert('This is not a valid email address, because it doesn\'t have \'@\' sign, Or it is very short')
+        alert('This is not a valid email address, because it doesn\'t have \'@\'')
     }
     else {
         textEmail.style.backgroundColor = "white";
@@ -65,7 +65,7 @@ function userEmail() {
 
 //check text in name field 
 function userName() {
-    if (textName.value.length <= 1 ) {
+    if (textName.value.length <= 1) {
         textName.style.backgroundColor = "red";
         alert('You Have Entered unvalid Name')
     }
@@ -78,8 +78,7 @@ function userName() {
 function description() {
     if (describe.value.length <= 5) {
         describe.style.backgroundColor = "red";
-       alert('The description should be at least 5 characters long')
-
+        alert('The description should be at least 5 characters long')
     }
     else {
         describe.style.backgroundColor = "white";
@@ -91,15 +90,15 @@ function description() {
 
 function submitForm(event) {
     event.preventDefault();
-    userEmail();
-    userName();
+    var verifyEmail = userEmail();
+    var verifyName = userName();
+    var verifyDescription = description()
     description();
-   
-    if (userEmail() && userName() && description() && ) {
+    if (verifyEmail && verifyName && verifyDescription) {
         textEmail.value = "";
         textName.value = "";
-        textDescibe.value = "";
-            alert('Thank you for filling out the form');
-      
+        describe.value = "";
+        alert('Thank you for filling out the form');
+
     }
 }

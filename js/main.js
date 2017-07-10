@@ -1,40 +1,37 @@
 var myButton = document.querySelector('#donateBike');
 myButton.addEventListener('click', myfunction);
- 
- function myfunction(){
 
-     var myMsg =document.querySelector('input').value;
-     var id = document.querySelector('select').value;
- 
- var request = new XMLHttpRequest(); 	    //creating a request object
+function myfunction() {
 
- request.onreadystatechange = function() {
-   if(request.readyState === 4) {  // check if a response was sent back
-     if(request.status === 200) { 	// check if request was successful
-       //textBox.innerHTML = request.responseText;
-       var a = JSON.parse( request.responseText);
+  var myMsg = document.querySelector('input').value;
+  var id = document.querySelector('select').value;
+
+  var request = new XMLHttpRequest(); 	    //creating a request object
+
+  request.onreadystatechange = function () {
+    if (request.readyState === 4) {  // check if a response was sent back
+      if (request.status === 200) { 	// check if request was successful
+        //textBox.innerHTML = request.responseText;
+        var a = JSON.parse(request.responseText);
         var box = document.querySelector('.jumbotron')
 
-            var paragraph = document.createElement('p');
-    paragraph.innerText =   a.message;
-    box.appendChild(paragraph);
-       //alert(a.message)
-       
-     } else {
+        var paragraph = document.createElement('p');
+        paragraph.innerText = a.message;
+        box.appendChild(paragraph);
+        //alert(a.message)
+      } else {
+        alert('An error occurred during your request: ' + request.status + ' ' + request.statusText);
+        // textBox.innerHTML = 'An error occurred during your request: ' +  request.status + ' ' + request.statusText;
+      }
+    }
+  }
+  var url = "http://ajax-cyf.eu-west-1.elasticbeanstalk.com/chatroom/?id=eee";	                                    //server location
+  request.open("GET", url);					// adding it to the request
 
-         alert('An error occurred during your request: ' +  request.status + ' ' + request.statusText);
-  
-      // textBox.innerHTML = 'An error occurred during your request: ' +  request.status + ' ' + request.statusText;
-     }
-   }
- }
- var url = "http://ajax-cyf.eu-west-1.elasticbeanstalk.com/chatroom/?id=eee";	                                    //server location
- request.open("GET", url);					// adding it to the request
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); //header info
+  request.send();
 
-request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); //header info
-request.send(); 	
-
- }
+}
 
 
 
@@ -97,7 +94,7 @@ request.send();
 
 
 // function myfunction(){
-    
+
 //     var box = document.querySelector('#mainArticles');
 
 // var x=Math.floor(Math.random() * 255);
@@ -105,7 +102,7 @@ request.send();
 // var z=Math.floor(Math.random() * 255);
 
 //     box.style.backgroundColor="rgb("+x+","+x+","+y+")";
-    
+
 
 //     var paragraph = document.createElement('p');
 //     paragraph.innerText = "show me more text";
@@ -117,7 +114,7 @@ request.send();
 // }
 
 // function myfunction(){
-    
+
 //     var box = document.querySelector('.jumbotron')
 //     box.style.backgroundColor="red";
 
